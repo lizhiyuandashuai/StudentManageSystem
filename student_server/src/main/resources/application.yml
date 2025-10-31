@@ -1,9 +1,10 @@
 spring:
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/studentms?setUnicode=true&characterEncoding=utf8&useAffectedRows=true
+    driver-class-name: com.mysql.cj.jdbc.Driver  # 8.x 必须带 cj
+    # 关键：添加 serverTimezone=Asia/Shanghai（北京时间，避免时区错乱）
+    url: jdbc:mysql://localhost:3306/studentms?setUnicode=true&characterEncoding=utf8&useAffectedRows=true&serverTimezone=Asia/Shanghai
     username: root
-    password: 123
+    password: 123456  # 确认与你 MySQL 的 root 密码一致
 
 mybatis:
   type-aliases-package: com.auggie.student_server.entity

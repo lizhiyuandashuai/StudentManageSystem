@@ -34,7 +34,8 @@ docker-compose up
    - 方式 B：直接运行 JAR（需数据库用户 `root` 密码为 `123`）
    ```bash
    java -jar student-server.jar
-   ```
+   `可以启动，但是需要的jar是得要新打包好的，它的路径在student_server
+   》target里面，打包好的jar文件是student-server.jar。'
 
 ## 🖼️ 项目截图
 

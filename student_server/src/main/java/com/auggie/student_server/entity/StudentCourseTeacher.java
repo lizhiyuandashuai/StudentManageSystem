@@ -1,26 +1,51 @@
+// 包路径：必须正确
 package com.auggie.student_server.entity;
 
-import lombok.AllArgsConstructor;
+// 导入 Lombok 注解
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.apache.ibatis.type.Alias;
-
-/**
- * @Auther: auggie
- * @Date: 2022/2/10 19:57
- * @Description: StudentCourseTeacher
- * @Version 1.0.0
- */
+import lombok.AllArgsConstructor;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Alias("StudentCourseTeacher")
 public class StudentCourseTeacher {
-    private Integer sctid;
-    private Integer sid;
-    private Integer cid;
-    private Integer tid;
-    private Float grade;
-    private String term;
+    // 属性（根据报错推测，对应 setSid()/setCid() 等方法）
+    private Integer sid;    // 学生ID
+    private Integer cid;    // 课程ID
+    private Integer tid;    // 教师ID
+    private String term;    // 学期（如"2024-2025学年第一学期"）
+
+    // 手动 get/set 方法
+    public Integer getSid() {
+        return sid;
+    }
+
+    public void setSid(Integer sid) {
+        this.sid = sid;
+    }
+
+    public Integer getCid() {
+        return cid;
+    }
+
+    public void setCid(Integer cid) {
+        this.cid = cid;
+    }
+
+    public Integer getTid() {
+        return tid;
+    }
+
+    public void setTid(Integer tid) {
+        this.tid = tid;
+    }
+
+    public String getTerm() {
+        return term;
+    }
+
+    public void setTerm(String term) {
+        this.term = term;
+    }
 }
